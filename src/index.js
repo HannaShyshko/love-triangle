@@ -3,5 +3,18 @@
  * @returns number of love triangles
  */
 module.exports = function getLoveTrianglesCount(preferences = []) {
-  // your implementation
+  let pref = preferences;
+	let triangle = 0;
+
+	for (let i=0; i<pref.length; i++) {
+		let k = pref[i] -1;
+		let n = pref[k] -1;
+		if (pref[n] -1 == i) {
+			triangle++;
+			
+		}
+
+	}
+	let result = Math.floor(triangle / 3);
+	return result;
 };
